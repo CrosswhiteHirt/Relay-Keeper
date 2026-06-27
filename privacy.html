@@ -4,43 +4,136 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Relaykeeper Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Relaykeeper, an iOS signal routing puzzle game.">
   <style>
-    :root { color-scheme: dark; --bg: #04111b; --text: #eafcff; --muted: #a9bec8; --cyan: #5ce7f1; --panel: rgba(9,31,43,.76); }
+    :root {
+      color-scheme: dark;
+      --bg: #04111b;
+      --text: #eafcff;
+      --muted: #a9bec8;
+      --cyan: #5ce7f1;
+      --green: #42d9a3;
+      --amber: #f4bd4e;
+      --panel: rgba(9,31,43,.78);
+      --line: rgba(92,231,241,.28);
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--text); background: linear-gradient(180deg, #03101b, #061826 55%, #031019); line-height: 1.65; }
-    main { width: min(860px, calc(100% - 32px)); margin: 0 auto; padding: 64px 0; }
-    h1 { font-size: clamp(2.4rem, 7vw, 4.8rem); line-height: 1; margin: 0 0 12px; letter-spacing: 0; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(92,231,241,.13), transparent 26rem),
+        linear-gradient(180deg, #03101b, #061826 55%, #031019);
+      line-height: 1.65;
+    }
+    main { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0; }
+    h1 { font-size: clamp(2.35rem, 7vw, 4.6rem); line-height: 1; margin: 0 0 12px; letter-spacing: 0; }
     h2 { color: var(--cyan); margin: 34px 0 8px; font-size: 1.25rem; }
+    h3 { margin: 20px 0 8px; font-size: 1rem; color: var(--green); }
     p, li { color: var(--muted); }
     a { color: var(--cyan); }
-    .card { border: 1px solid rgba(92,231,241,.25); background: var(--panel); border-radius: 8px; padding: 24px; margin-top: 24px; }
+    ul { padding-left: 22px; }
+    .card { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 24px; margin-top: 24px; }
     .updated { color: var(--cyan); font-weight: 700; }
+    .note { color: var(--amber); }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary div {
+      border: 1px solid rgba(92,231,241,.22);
+      background: rgba(4,17,27,.62);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 112px;
+    }
+    .summary strong { display: block; color: var(--text); margin-bottom: 6px; }
+    @media (max-width: 720px) {
+      main { padding: 38px 0; }
+      .card { padding: 18px; }
+      .summary { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <main>
     <p class="updated">Effective Date: June 27, 2026</p>
     <h1>Privacy Policy</h1>
-    <p>This Privacy Policy explains how Relaykeeper handles information. Relaykeeper is designed as an offline single-player puzzle game.</p>
+    <p>This Privacy Policy explains how Relaykeeper handles information. Relaykeeper is a single-player iOS puzzle game. The game does not require an account and does not use cloud saves, online leaderboards or in-app purchases.</p>
+
+    <div class="summary" aria-label="Privacy summary">
+      <div>
+        <strong>No Account Required</strong>
+        <p>We do not ask for your name, email address, phone number or payment details.</p>
+      </div>
+      <div>
+        <strong>Local Progress</strong>
+        <p>Level progress, stars and settings are stored on your device.</p>
+      </div>
+      <div>
+        <strong>Ads and Security</strong>
+        <p>Advertising and anti-fraud SDKs may process device and usage signals as described below.</p>
+      </div>
+    </div>
 
     <div class="card">
-      <h2>Information We Collect</h2>
-      <p>Relaykeeper does not require account registration and does not collect names, email addresses, phone numbers, precise location, contacts, photos or payment information.</p>
+      <h2>Information We Collect Directly</h2>
+      <p>Relaykeeper does not require account registration and does not directly collect names, email addresses, phone numbers, precise location, contacts, photos or payment information.</p>
 
       <h2>Local Game Data</h2>
-      <p>The game may store progress, unlocked levels, stars, audio settings and similar gameplay preferences locally on your device. This data is used only to provide the game experience and is not sent to us.</p>
+      <p>The game may store gameplay data locally on your device, including unlocked levels, completed levels, star ratings, audio settings, developer/debug flags and similar preferences. This data is used to provide the game experience and is not sent to us by the game save system.</p>
 
-      <h2>Internet and Third Parties</h2>
-      <p>The current version of Relaykeeper is intended to work offline. It does not include user accounts, cloud saves, online leaderboards, in-app purchases or advertising identifiers.</p>
+      <h2>Advertising</h2>
+      <p>Relaykeeper may show ads after gameplay. The first four levels do not show ads. From later levels, ads may be requested after completed gameplay sessions.</p>
+      <p>The app requests advertising configuration from our server using the app bundle identifier. Advertising SDKs are initialized only when our configuration service returns valid parameters for that platform. If a platform is not configured, that platform is not initialized, does not request ads and is not used for ad display.</p>
+
+      <h3>Advertising Partners</h3>
+      <p>Relaykeeper includes support for these advertising SDKs. Depending on server configuration and ad availability, one or more of them may be used:</p>
+      <ul>
+        <li>Chartboost</li>
+        <li>Yandex Mobile Ads</li>
+        <li>Vungle / Liftoff</li>
+        <li>InMobi</li>
+      </ul>
+      <p>These partners may process information such as device identifiers, advertising identifiers, IP address, approximate location inferred from network information, app information, ad impressions, ad clicks, ad views, crash or diagnostic signals, and fraud-prevention signals. Their processing is governed by their own privacy policies.</p>
+
+      <h2>App Tracking Transparency and Advertising Identifier</h2>
+      <p>On iOS, Relaykeeper uses Apple's App Tracking Transparency prompt before requesting access to the Identifier for Advertisers (IDFA). If you allow tracking, advertising partners may use the IDFA to deliver relevant ads, measure ad performance and help prevent ad fraud. If you do not allow tracking, the app will not receive the IDFA, but ads may still be shown using non-tracking or contextual signals where available.</p>
+
+      <h2>Security and Anti-Fraud</h2>
+      <p>Relaykeeper uses a security SDK to help protect the app and advertising flow from fraud, tampering and abuse. The security SDK is initialized when the app starts. It uses the app bundle identifier and a device vendor identifier (IDFV) as part of its security and anti-fraud operation.</p>
+
+      <h2>Ad Configuration Service</h2>
+      <p>The app may contact our ad configuration endpoint to determine which ad platforms are enabled for the current app bundle. Server logs may include technical information such as IP address, request time, bundle identifier and basic request metadata. This information is used to operate, secure and troubleshoot the ad configuration service.</p>
 
       <h2>Children's Privacy</h2>
-      <p>Relaykeeper does not knowingly collect personal information from children. If you believe a child has provided personal information to us, contact us and we will take appropriate action.</p>
+      <p>Relaykeeper is not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information to us, contact us and we will take appropriate action.</p>
 
       <h2>Data Retention</h2>
-      <p>Local game data remains on your device until you delete the app or clear the app data through the operating system.</p>
+      <p>Local game data remains on your device until you delete the app or clear the app data through the operating system. Advertising, security and server log data may be retained by us or our service providers for operation, measurement, fraud prevention, legal compliance and troubleshooting, according to each provider's retention practices.</p>
+
+      <h2>Your Choices</h2>
+      <ul>
+        <li>You can allow or deny tracking when iOS shows the App Tracking Transparency prompt.</li>
+        <li>You can change tracking permission later in iOS Settings.</li>
+        <li>You can delete local game progress by deleting the app from your device.</li>
+      </ul>
+
+      <h2>Third-Party Services</h2>
+      <p class="note">Third-party SDKs may update their practices over time. Please review their policies for the most current details.</p>
+      <ul>
+        <li><a href="https://www.chartboost.com/privacy/" rel="noopener">Chartboost Privacy Policy</a></li>
+        <li><a href="https://yandex.com/legal/confidential/" rel="noopener">Yandex Privacy Policy</a></li>
+        <li><a href="https://liftoff.io/privacy-policy/" rel="noopener">Liftoff / Vungle Privacy Policy</a></li>
+        <li><a href="https://www.inmobi.com/privacy-policy/" rel="noopener">InMobi Privacy Policy</a></li>
+        <li><a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Privacy Policy</a></li>
+      </ul>
 
       <h2>Changes to This Policy</h2>
-      <p>We may update this Privacy Policy when the app changes. The updated version will be identified by a new effective date.</p>
+      <p>We may update this Privacy Policy when the app, advertising setup, security tools or legal requirements change. The updated version will be identified by a new effective date.</p>
 
       <h2>Contact</h2>
       <p>For privacy questions, contact the developer at +86 17817542304 or <a href="mailto:707570996@qq.com">707570996@qq.com</a>.</p>
